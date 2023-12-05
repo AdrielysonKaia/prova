@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block center %}
+    <h2> Formulário de Hospedagem</h2>
+       
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="data_entrada" class="form-label">Data de entrada</label>
+            {{ form.data_entrada }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="data_saida" class="form-label">Data de saida</label>
+            {{ form.data_saida }}
+        </div>
+
+        <div class="mb-3">
+            <label for="valor" class="form-label">Valor</label>
+            {{ form.valor }}
+        </div>
+
+        <div class="mb-3">
+            <label for="consumo" class="form-label">Consumo</label>
+            {{ form.consumo }}
+        </div>
+        
+
+        <div class="mb-3">
+            <label for="quarto" class="form-label">Quarto</label>
+            {{ form.quarto }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>    
+{% endblock %}
+   

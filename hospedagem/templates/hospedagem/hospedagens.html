@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block center %}
+  <h2> Lista de Hospedagens</h2>
+
+  <a href="{% url 'hospedagem_criar' %}" class="btn btn-success mb-3">Novo Cadastro</a>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Data de entrada</th>
+        <th>Data de saida</th>
+        <th>Valor</th>
+        <th>Consumo</th>
+        <th>Quarto</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for hospedagem in hospedagens %}  
+      <tr>
+        <td>{{ hospedagem.data_entrada }}</td>
+        <td>{{ hospedagem.data_saida }}</td>
+        <td>{{ hospedagem.valor }}</td>
+        <td>{{ hospedagem.consumo }}</td>
+        <td>{{ hospedagem.quarto }}</td>
+        <td>
+          <a href="{% url 'hospedagem_editar' id=hospedagem.id %}" class="btn btn-primary btn-sm">Editar</a>
+          <a href="{% url 'hospedagem_remover' id=hospedagem.id %}" class="btn btn-danger btn-sm">Remover</a>
+          <a href="{% url 'hospedagem_detalhar' id=hospedagem.id %}" class="btn btn-success btn-sm">Detalhar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    
+    </tbody>
+  </table>
+{% endblock %}

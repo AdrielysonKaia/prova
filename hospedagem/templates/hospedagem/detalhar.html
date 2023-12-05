@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block center %}
+  <h2> Detalhe da Hospedagem: Data {{ hospedagem }}</h2>
+
+  <ul>
+    <li>Data de entrada: {{ hospedagem.data_entrada }}</li>
+    <li>Data de saida: {{ hospedagem.data_saida }}</li>
+    <li>Valor: {{ hospedagem.valor }}</li>
+    <li>Consumo: {{ hospedagem.consumo }}</li>
+    <li>Quarto: {{ hospedagem.quarto }}</li>
+  </ul>
+{% endblock %}
+   
